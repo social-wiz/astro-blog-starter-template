@@ -1,0 +1,118 @@
+---
+const solutions = [
+	{
+		name: 'Google Ads',
+		blurb: "We're a team that has worked with some of the world's biggest brands.",
+		tags: ['SEM', 'YouTube', 'PMAX', 'Display', 'Discovery'],
+	},
+	{
+		name: 'Programmatic Ads',
+		blurb: 'Automated buying and selling across display, video, audio, and mobile.',
+		tags: ['Display', 'High Impact Video', 'DOOH', 'Audio'],
+	},
+	{
+		name: 'Automation & Analytics',
+		blurb: 'Reduced management time via intelligent automation. All dashboards live 24/7.',
+		tags: ['Dashboards', 'Database Management', 'GA4 Migration', 'CAPI'],
+	},
+	{
+		name: 'Social Media Ads',
+		blurb: 'Battle-tested strategies that hyper-target your audience.',
+		tags: ['Meta', 'TikTok', 'LinkedIn', 'Twitter', 'Reddit'],
+	},
+];
+---
+
+<section class="fr-solutions fr-reveal" id="solutions">
+	<div class="fr-solutions-inner">
+		<p class="fr-eyebrow">What we run</p>
+		<h2>Full-funnel media, owned end to end</h2>
+		<div class="fr-solutions-grid">
+			{
+				solutions.map((solution) => (
+					<article class="fr-solution-card">
+						<h3>{solution.name}</h3>
+						<p>{solution.blurb}</p>
+						<ul>
+							{solution.tags.map((tag) => (
+								<li>{tag}</li>
+							))}
+						</ul>
+					</article>
+				))
+			}
+		</div>
+	</div>
+</section>
+
+<style>
+	.fr-solutions {
+		background: var(--fr-canvas);
+		padding: var(--fr-xxl) var(--fr-xs);
+	}
+	.fr-solutions-inner {
+		max-width: 1280px;
+		margin: 0 auto;
+	}
+	h2 {
+		font-size: 36px;
+		font-weight: 500;
+		letter-spacing: -0.36px;
+		color: var(--fr-ink);
+		margin-top: var(--fr-xxs);
+		max-width: 18ch;
+	}
+	.fr-solutions-grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 1px;
+		background: var(--fr-hairline);
+		margin-top: var(--fr-lg);
+	}
+	.fr-solution-card {
+		background: var(--fr-canvas-elevated);
+		padding: var(--fr-sm);
+		transition: background-color 0.15s ease;
+	}
+	.fr-solution-card:hover {
+		background: #383838;
+	}
+	.fr-solution-card h3 {
+		font-size: 18px;
+		font-weight: 700;
+		color: var(--fr-ink);
+	}
+	.fr-solution-card p {
+		font-size: 14px;
+		color: var(--fr-body);
+		margin: var(--fr-xxs) 0 0;
+	}
+	.fr-solution-card ul {
+		list-style: none;
+		margin: var(--fr-xs) 0 0;
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--fr-xxxs);
+	}
+	.fr-solution-card li {
+		font-size: 11px;
+		font-weight: 600;
+		letter-spacing: 1.1px;
+		text-transform: uppercase;
+		color: var(--fr-ink);
+		background: var(--fr-canvas);
+		border-radius: 9999px;
+		padding: 4px 12px;
+	}
+	@media (max-width: 1024px) {
+		.fr-solutions-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+	@media (max-width: 640px) {
+		.fr-solutions-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

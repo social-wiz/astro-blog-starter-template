@@ -1,0 +1,74 @@
+---
+const links = [
+	{ href: '#solutions', label: 'Solutions' },
+	{ href: '#case-studies', label: 'Case Studies' },
+	{ href: '#testimonials', label: 'Resources' },
+];
+---
+
+<header class="fr-nav">
+	<nav>
+		<a class="fr-wordmark" href="/">KPI MEDIA</a>
+		<div class="fr-nav-links">
+			{links.map((link) => <a href={link.href}>{link.label}</a>)}
+		</div>
+		<a class="fr-btn fr-btn-primary fr-nav-cta" href="#cta">Get Started</a>
+	</nav>
+</header>
+
+<style>
+	.fr-nav {
+		position: sticky;
+		top: 0;
+		z-index: 50;
+		background: var(--fr-canvas);
+		border-bottom: 1px solid var(--fr-hairline);
+	}
+	nav {
+		height: 64px;
+		max-width: 1280px;
+		margin: 0 auto;
+		padding: 0 var(--fr-xs);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--fr-md);
+	}
+	.fr-wordmark {
+		font-family: var(--fr-font);
+		font-size: 16px;
+		font-weight: 500;
+		letter-spacing: 0.08px;
+		color: var(--fr-ink);
+		text-decoration: none;
+	}
+	.fr-nav-links {
+		display: flex;
+		gap: var(--fr-md);
+		flex: 1;
+		justify-content: center;
+	}
+	.fr-nav-links a {
+		font-family: var(--fr-font);
+		font-size: 13px;
+		font-weight: 600;
+		letter-spacing: 0.65px;
+		text-transform: uppercase;
+		color: var(--fr-ink);
+		text-decoration: none;
+		padding: var(--fr-xxs) 0;
+	}
+	.fr-nav-links a:hover {
+		color: var(--fr-primary);
+	}
+	.fr-nav-cta {
+		font-size: 12px;
+		padding: 10px 20px;
+		height: auto;
+	}
+	@media (max-width: 768px) {
+		.fr-nav-links {
+			display: none;
+		}
+	}
+</style>

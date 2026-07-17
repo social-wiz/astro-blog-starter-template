@@ -1,0 +1,145 @@
+---
+const today = new Date();
+const columns = [
+	{
+		title: 'Solutions',
+		links: ['Google Ads', 'Programmatic Ads', 'Automation & Analytics', 'Social Media Ads'],
+	},
+	{
+		title: 'Resources',
+		links: ['Case Studies', 'Blog', 'Free Tools'],
+	},
+	{
+		title: 'Contact',
+		links: ['68 Circular Rd, Singapore', 'sales@kpimedia.sg', '+65 9325 3257'],
+	},
+];
+const socials = ['Facebook', 'Instagram', 'LinkedIn', 'TikTok'];
+---
+
+<footer class="fr-footer">
+	<div class="fr-footer-inner">
+		<div class="fr-footer-top">
+			<span class="fr-wordmark">KPI MEDIA</span>
+			<div class="fr-footer-socials">
+				{socials.map((s) => <span>{s}</span>)}
+			</div>
+		</div>
+		<div class="fr-footer-columns">
+			{
+				columns.map((col) => (
+					<div>
+						<p class="fr-footer-heading">{col.title}</p>
+						<ul>
+							{col.links.map((link) => (
+								<li>{link}</li>
+							))}
+						</ul>
+					</div>
+				))
+			}
+		</div>
+		<div class="fr-footer-bottom">
+			<p>&copy; {today.getFullYear()} KPI Media. All rights reserved.</p>
+			<div class="fr-footer-legal">
+				<a href="/terms">Terms &amp; Conditions</a>
+				<a href="/privacy">Privacy Policy</a>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<style>
+	.fr-footer {
+		background: var(--fr-canvas);
+		color: var(--fr-body);
+		padding: var(--fr-xl) var(--fr-xs) var(--fr-md);
+	}
+	.fr-footer-inner {
+		max-width: 1280px;
+		margin: 0 auto;
+	}
+	.fr-footer-top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-bottom: var(--fr-lg);
+		border-bottom: 1px solid var(--fr-hairline);
+	}
+	.fr-wordmark {
+		font-size: 16px;
+		font-weight: 500;
+		color: var(--fr-ink);
+	}
+	.fr-footer-socials {
+		display: flex;
+		gap: var(--fr-xs);
+	}
+	.fr-footer-socials span {
+		font-size: 13px;
+		font-weight: 600;
+		letter-spacing: 0.65px;
+		text-transform: uppercase;
+		color: var(--fr-body);
+	}
+	.fr-footer-columns {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: var(--fr-lg);
+		padding: var(--fr-lg) 0;
+	}
+	.fr-footer-heading {
+		font-size: 12px;
+		font-weight: 600;
+		letter-spacing: 1.1px;
+		text-transform: uppercase;
+		color: var(--fr-ink);
+		margin: 0 0 var(--fr-xs);
+	}
+	.fr-footer-columns ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: var(--fr-xxs);
+	}
+	.fr-footer-columns li {
+		font-size: 13px;
+		color: var(--fr-body);
+	}
+	.fr-footer-bottom {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-top: var(--fr-md);
+		border-top: 1px solid var(--fr-hairline);
+		font-size: 13px;
+		flex-wrap: wrap;
+		gap: var(--fr-xs);
+	}
+	.fr-footer-bottom p {
+		margin: 0;
+	}
+	.fr-footer-legal {
+		display: flex;
+		gap: var(--fr-md);
+	}
+	.fr-footer-legal a {
+		color: var(--fr-body);
+		text-decoration: none;
+	}
+	.fr-footer-legal a:hover {
+		color: var(--fr-ink);
+	}
+	@media (max-width: 768px) {
+		.fr-footer-columns {
+			grid-template-columns: 1fr 1fr;
+		}
+		.fr-footer-top {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: var(--fr-xs);
+		}
+	}
+</style>
