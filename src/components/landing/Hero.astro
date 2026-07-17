@@ -1,0 +1,92 @@
+---
+---
+
+<section class="fr-hero">
+	<div class="fr-hero-glow" aria-hidden="true"></div>
+	<div class="fr-hero-inner fr-reveal">
+		<p class="fr-eyebrow">Recognized by The Straits Times &amp; Statista</p>
+		<h1>Singapore's Fastest Growing Media Agency</h1>
+		<p class="fr-hero-sub">Your KPIs Are Our KPIs</p>
+		<div class="fr-hero-actions">
+			<a class="fr-btn fr-btn-primary" href="#cta">See What We Can Do</a>
+			<a class="fr-btn fr-btn-outline" href="#solutions">Explore Solutions</a>
+		</div>
+	</div>
+</section>
+
+<style>
+	.fr-hero {
+		position: relative;
+		min-height: 92vh;
+		display: flex;
+		align-items: flex-end;
+		background: var(--fr-canvas);
+		overflow: hidden;
+		padding: var(--fr-xxl) var(--fr-xs) var(--fr-super);
+		box-sizing: border-box;
+	}
+	.fr-hero-glow {
+		position: absolute;
+		inset: 0;
+		background:
+			radial-gradient(60% 50% at 80% 15%, rgba(218, 41, 28, 0.28), transparent 70%),
+			linear-gradient(180deg, #3c3c3c 0%, #030303 64%);
+		background-color: var(--fr-canvas);
+	}
+	.fr-hero-glow::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background-image: linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+		background-size: 64px 64px;
+		mask-image: linear-gradient(180deg, transparent, black 60%);
+	}
+	.fr-hero-inner {
+		position: relative;
+		max-width: 1280px;
+		margin: 0 auto;
+		width: 100%;
+	}
+	h1 {
+		font-size: 80px;
+		font-weight: 500;
+		line-height: 1.05;
+		letter-spacing: -1.6px;
+		color: var(--fr-ink);
+		max-width: 16ch;
+		margin: var(--fr-xs) 0 0;
+	}
+	.fr-hero-sub {
+		font-size: 26px;
+		font-weight: 500;
+		line-height: 1.5;
+		color: var(--fr-primary);
+		margin: var(--fr-xs) 0 0;
+	}
+	.fr-hero-actions {
+		display: flex;
+		gap: var(--fr-xs);
+		margin-top: var(--fr-lg);
+		flex-wrap: wrap;
+	}
+	@media (max-width: 1024px) {
+		h1 {
+			font-size: 56px;
+			letter-spacing: -1.12px;
+		}
+	}
+	@media (max-width: 640px) {
+		.fr-hero {
+			min-height: 80vh;
+			padding: var(--fr-xl) var(--fr-xs) var(--fr-xxl);
+		}
+		h1 {
+			font-size: 32px;
+			letter-spacing: -0.36px;
+		}
+		.fr-hero-sub {
+			font-size: 20px;
+		}
+	}
+</style>

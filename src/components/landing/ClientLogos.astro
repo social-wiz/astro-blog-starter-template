@@ -1,0 +1,48 @@
+---
+const startups = ['Ofnoah', 'Offeo', 'Novocall', 'ipaymy', 'Stayr', 'MoneyOwl'];
+const enterprise = ['Canon', 'Epson', 'Kaspersky', 'Starbucks', 'Hilton', 'DBS', 'Deloitte'];
+---
+
+<section class="fr-logos fr-reveal">
+	<div class="fr-logos-inner">
+		<p class="fr-eyebrow">Trusted by 50+ brands</p>
+		<ul class="fr-logo-row">
+			{startups.map((name) => <li>{name}</li>)}
+		</ul>
+		<ul class="fr-logo-row fr-logo-row-enterprise">
+			{enterprise.map((name) => <li>{name}</li>)}
+		</ul>
+	</div>
+</section>
+
+<style>
+	.fr-logos {
+		background: var(--fr-canvas);
+		padding: var(--fr-xl) var(--fr-xs);
+		border-top: 1px solid var(--fr-hairline);
+		border-bottom: 1px solid var(--fr-hairline);
+	}
+	.fr-logos-inner {
+		max-width: 1280px;
+		margin: 0 auto;
+	}
+	.fr-logo-row {
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--fr-lg);
+		margin: var(--fr-sm) 0 0;
+		padding: 0;
+	}
+	.fr-logo-row-enterprise {
+		margin-top: var(--fr-md);
+		padding-top: var(--fr-md);
+		border-top: 1px solid var(--fr-hairline);
+	}
+	.fr-logo-row li {
+		font-size: 18px;
+		font-weight: 500;
+		color: var(--fr-muted);
+		letter-spacing: 0.08px;
+	}
+</style>

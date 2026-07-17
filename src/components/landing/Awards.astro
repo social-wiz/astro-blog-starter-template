@@ -1,0 +1,73 @@
+---
+const awards = [
+	"Ranked by The Straits Times & Statista",
+	'SmartSingapore Best Digital Marketing Agency 2024',
+];
+const partners = ['Google Premier Partner', 'Meta Business Partner', 'Microsoft Advertising Partner', 'TikTok Marketing Partner'];
+---
+
+<section class="fr-awards fr-reveal">
+	<div class="fr-awards-inner">
+		<div class="fr-awards-col">
+			<p class="fr-eyebrow">Recognized</p>
+			<ul>
+				{awards.map((a) => <li>{a}</li>)}
+			</ul>
+		</div>
+		<div class="fr-awards-col">
+			<p class="fr-eyebrow">Certified</p>
+			<div class="fr-badge-row">
+				{partners.map((p) => <span class="fr-badge">{p}</span>)}
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.fr-awards {
+		background: var(--fr-canvas);
+		padding: var(--fr-xl) var(--fr-xs);
+		border-top: 1px solid var(--fr-hairline);
+	}
+	.fr-awards-inner {
+		max-width: 1280px;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: var(--fr-lg);
+	}
+	.fr-awards-col ul {
+		list-style: none;
+		margin: var(--fr-xs) 0 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: var(--fr-xxs);
+	}
+	.fr-awards-col li {
+		font-size: 16px;
+		font-weight: 500;
+		color: var(--fr-ink);
+	}
+	.fr-badge-row {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--fr-xxs);
+		margin-top: var(--fr-xs);
+	}
+	.fr-badge {
+		font-size: 11px;
+		font-weight: 600;
+		letter-spacing: 1.1px;
+		text-transform: uppercase;
+		color: var(--fr-ink);
+		background: var(--fr-canvas-elevated);
+		border-radius: 9999px;
+		padding: 4px 12px;
+	}
+	@media (max-width: 768px) {
+		.fr-awards-inner {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

@@ -1,0 +1,90 @@
+---
+const quotes = [
+	{
+		quote:
+			'After engaging KPI Media, our CPA dropped tremendously and our MQLs and SQLs increased as well.',
+		name: 'Huang Jing Jie',
+		company: 'Novocall',
+	},
+	{
+		quote: 'Working with KPI Media is one of the best decisions we made to scale up.',
+		name: 'David Lee',
+		company: 'Offeo',
+	},
+	{
+		quote:
+			'Delivering results is of utmost importance to them — they have always exceeded expectations.',
+		name: 'Czariam Carreon',
+		company: 'Verra Asia',
+	},
+];
+---
+
+<section class="fr-testimonials fr-reveal" id="testimonials">
+	<div class="fr-testimonials-inner">
+		<p class="fr-eyebrow">What clients say</p>
+		<div class="fr-testimonials-grid">
+			{
+				quotes.map((t) => (
+					<blockquote class="fr-quote-card">
+						<p class="fr-quote-text">&ldquo;{t.quote}&rdquo;</p>
+						<footer>
+							<span class="fr-quote-name">{t.name}</span>
+							<span class="fr-quote-company">{t.company}</span>
+						</footer>
+					</blockquote>
+				))
+			}
+		</div>
+	</div>
+</section>
+
+<style>
+	.fr-testimonials {
+		background: var(--fr-canvas);
+		padding: var(--fr-xxl) var(--fr-xs);
+	}
+	.fr-testimonials-inner {
+		max-width: 1280px;
+		margin: 0 auto;
+	}
+	.fr-testimonials-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1px;
+		background: var(--fr-hairline);
+		margin-top: var(--fr-lg);
+	}
+	.fr-quote-card {
+		background: var(--fr-canvas-elevated);
+		padding: var(--fr-sm);
+		margin: 0;
+	}
+	.fr-quote-text {
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 1.5;
+		color: var(--fr-ink);
+		margin: 0;
+	}
+	.fr-quote-card footer {
+		display: flex;
+		flex-direction: column;
+		gap: 2px;
+		margin-top: var(--fr-sm);
+	}
+	.fr-quote-name {
+		font-size: 13px;
+		font-weight: 600;
+		color: var(--fr-ink);
+	}
+	.fr-quote-company {
+		font-size: 12px;
+		color: var(--fr-muted);
+	}
+	@media (max-width: 1024px) {
+		.fr-testimonials-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

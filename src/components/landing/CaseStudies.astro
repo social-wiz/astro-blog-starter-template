@@ -1,0 +1,89 @@
+---
+const cases = [
+	{ client: 'OWNDAYS', metric: '3X', label: 'ROAS and Retail Footfall Growth' },
+	{ client: 'Canon Smart Tech', metric: '66%', label: 'Lead Volume Growth' },
+	{ client: 'Huobi (HTX)', metric: '130%', label: 'ROAS, 52% Lower Cost per Install' },
+	{ client: 'Orchard Clinic', metric: '1.75X', label: 'Lead Volume, 37% Lower CPL' },
+];
+---
+
+<section class="fr-cases fr-reveal" id="case-studies">
+	<div class="fr-cases-inner">
+		<p class="fr-eyebrow">Proof, not promises</p>
+		<h2>Case studies</h2>
+		<div class="fr-cases-grid">
+			{
+				cases.map((item) => (
+					<article class="fr-case-cell">
+						<p class="fr-case-metric">{item.metric}</p>
+						<p class="fr-case-label">{item.label}</p>
+						<p class="fr-case-client">{item.client}</p>
+					</article>
+				))
+			}
+		</div>
+	</div>
+</section>
+
+<style>
+	.fr-cases {
+		background: var(--fr-canvas);
+		padding: var(--fr-xxl) var(--fr-xs);
+		border-top: 1px solid var(--fr-hairline);
+	}
+	.fr-cases-inner {
+		max-width: 1280px;
+		margin: 0 auto;
+	}
+	h2 {
+		font-size: 36px;
+		font-weight: 500;
+		letter-spacing: -0.36px;
+		color: var(--fr-ink);
+		margin-top: var(--fr-xxs);
+	}
+	.fr-cases-grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: var(--fr-lg);
+		margin-top: var(--fr-lg);
+	}
+	.fr-case-cell {
+		border-top: 1px solid var(--fr-hairline);
+		padding-top: var(--fr-sm);
+	}
+	.fr-case-metric {
+		font-size: 80px;
+		font-weight: 700;
+		line-height: 1;
+		letter-spacing: -1.6px;
+		color: var(--fr-primary);
+		margin: 0;
+	}
+	.fr-case-label {
+		font-size: 14px;
+		color: var(--fr-ink);
+		margin: var(--fr-xxs) 0 0;
+	}
+	.fr-case-client {
+		font-size: 11px;
+		font-weight: 600;
+		letter-spacing: 1.1px;
+		text-transform: uppercase;
+		color: var(--fr-muted);
+		margin: var(--fr-xxs) 0 0;
+	}
+	@media (max-width: 1024px) {
+		.fr-cases-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		.fr-case-metric {
+			font-size: 56px;
+		}
+	}
+	@media (max-width: 640px) {
+		.fr-cases-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
